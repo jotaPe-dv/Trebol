@@ -1,0 +1,2656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avisos El Trébol Inkpacta | Publicidad Visual Medellín</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #76b25c;
+    --lime: #83f650;
+    --lime-soft: #6de040;
+    --purple: #bd12e8;
+    --white: #ffffff;
+    --gray-light: #f0f0f0;
+    --gray-mid: #d0d0d0;
+    --gray-soft: #aaaaaa;
+    --gray-dim: #888888;
+    --gray-faint: #555555;
+    --gray-dark: #2a2a2a;
+    --black: #111111;
+    --black-deep: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --border: rgba(131,246,80,0.2);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999;
+    opacity: 0.3;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--lime); border-radius: 3px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 40px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo .trebol {
+    font-size: 28px;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(131,246,80,0.4));
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .nav-logo-text span:first-child {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--lime);
+  }
+
+  .nav-logo-text span:last-child {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    color: var(--gray-dim);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--gray-mid);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--lime); }
+
+  .nav-cta {
+    background: var(--lime);
+    color: var(--black) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--lime-soft) !important;
+    transform: translateY(-1px);
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 6px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--lime);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 80% 50%, rgba(189,18,232,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 20% 80%, rgba(131,246,80,0.08) 0%, transparent 50%),
+      var(--black);
+  }
+
+  .hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(131,246,80,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(131,246,80,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(131,246,80,0.1);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 28px;
+    animation: fadeInUp 0.8s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--lime);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s 0.15s ease both;
+  }
+
+  .hero-title .accent { color: var(--lime); }
+  .hero-title .stroke { color: var(--purple); }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--gray-mid);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeInUp 0.8s 0.3s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s 0.45s ease both;
+  }
+
+  .btn-primary {
+    background: var(--lime);
+    color: var(--black);
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .btn-primary:hover {
+    background: var(--lime-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(131,246,80,0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--lime);
+    color: var(--lime);
+  }
+
+  .hero-stats {
+    position: absolute;
+    right: 60px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    animation: fadeInRight 1s 0.6s ease both;
+    z-index: 2;
+  }
+
+  .hero-stat {
+    text-align: right;
+    border-right: 2px solid var(--lime);
+    padding-right: 20px;
+  }
+
+  .hero-stat .num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--lime);
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  .hero-stat .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-dim);
+    margin-top: 4px;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section {
+    padding: 100px 60px;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-label::before {
+    content: '// ';
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .section-title span {
+    color: var(--lime);
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--gray-dim);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+    font-weight: 300;
+  }
+
+  /* ── HISTORIA ── */
+  #historia {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #historia::before {
+    content: '1971';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: 240px;
+    color: rgba(131,246,80,0.04);
+    letter-spacing: -10px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .historia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .historia-text p {
+    color: var(--gray-soft);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .historia-text p strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .historia-milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .milestone {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .milestone-year {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--lime);
+    min-width: 90px;
+    letter-spacing: 2px;
+  }
+
+  .milestone-content h4 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--white);
+  }
+
+  .milestone-content p {
+    font-size: 0.88rem;
+    color: var(--gray-dim);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .badge {
+    background: rgba(131,246,80,0.1);
+    border: 1px solid var(--border);
+    color: var(--lime);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* ── PORTAFOLIO ── */
+  #portafolio {
+    background: var(--black);
+  }
+
+  .portafolio-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .filter-btn {
+    background: rgba(255,255,255,0.04);
+    color: var(--gray-soft);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 18px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: rgba(131,246,80,0.15);
+    border-color: var(--lime);
+    color: var(--lime);
+  }
+
+  .portafolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .port-item {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .port-item.large {
+    grid-column: span 2;
+    aspect-ratio: unset;
+    min-height: 320px;
+  }
+
+  .port-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .port-item:hover img { transform: scale(1.05); }
+
+  .port-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    z-index: 2;
+  }
+
+  .port-item:hover .port-overlay { opacity: 1; }
+
+  .port-overlay h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    color: var(--lime);
+  }
+
+  .port-overlay p {
+    font-size: 0.85rem;
+    color: var(--gray-mid);
+    line-height: 1.5;
+  }
+
+  .port-tag {
+    z-index: 3;
+    position: absolute;
+    top: 14px; right: 14px;
+    background: rgba(131,246,80,0.95);
+    color: var(--black);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* ── CATALOGO ── */
+  #catalogo {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .catalogo-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--gray-dim);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 14px 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+
+  .tab-btn.active,
+  .tab-btn:hover {
+    color: var(--lime);
+    border-bottom-color: var(--lime);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .producto-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .producto-card:hover {
+    border-color: var(--lime);
+    background: rgba(131,246,80,0.05);
+    transform: translateY(-4px);
+  }
+
+  .producto-icon {
+    height: 120px;
+    background: linear-gradient(135deg, rgba(131,246,80,0.15), rgba(189,18,232,0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .producto-info {
+    padding: 24px;
+  }
+
+  .producto-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+
+  .producto-info p {
+    font-size: 0.85rem;
+    color: var(--gray-dim);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .producto-desde {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--lime);
+    letter-spacing: 1px;
+  }
+
+  .btn-cotizar-card {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    background: rgba(131,246,80,0.1);
+    border: 1px solid var(--border);
+    color: var(--lime);
+    padding: 10px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 6px;
+  }
+
+  .btn-cotizar-card:hover {
+    background: var(--lime);
+    border-color: var(--lime);
+    color: var(--black);
+  }
+
+  /* ── COTIZACION ── */
+  #cotizacion {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+  }
+
+  .cotizacion-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cotizacion-info h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--lime);
+  }
+
+  .cotizacion-info p {
+    color: var(--gray-dim);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+
+  .cotizacion-features {
+    list-style: none;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cotizacion-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--gray-soft);
+  }
+
+  .cotizacion-features li::before {
+    content: '✓';
+    color: var(--lime);
+    font-weight: 700;
+    font-size: 1rem;
+    min-width: 20px;
+  }
+
+  .cotizacion-form {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray-soft);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 6px;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--lime);
+  }
+
+  .form-group select option { background: var(--card-bg); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .medidas-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .medidas-row input { flex: 1; }
+
+  .medidas-sep {
+    color: var(--gray-dim);
+    font-size: 1.25rem;
+  }
+
+  .material-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .material-option {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 18px;
+    text-align: center;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--gray-soft);
+    transition: all 0.2s;
+    border-radius: 100px;
+    user-select: none;
+  }
+
+  .material-option.selected,
+  .material-option:hover {
+    background: rgba(131,246,80,0.15);
+    border-color: var(--lime);
+    color: var(--lime);
+  }
+
+  .precio-estimado {
+    background: rgba(131,246,80,0.08);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+  }
+
+  .precio-estimado.visible { display: block; }
+
+  .precio-estimado .precio-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-dim);
+    margin-bottom: 8px;
+  }
+
+  .precio-estimado .precio-valor {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--lime);
+    letter-spacing: 2px;
+  }
+
+  .precio-estimado .precio-nota {
+    font-size: 0.78rem;
+    color: var(--gray-dim);
+    margin-top: 6px;
+  }
+
+  /* FILE UPLOAD */
+  .file-upload-area {
+    border: 2px dashed rgba(131,246,80,0.3);
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .file-upload-area:hover {
+    border-color: var(--lime);
+    background: rgba(131,246,80,0.03);
+  }
+
+  .file-upload-area input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  .file-upload-icon { font-size: 2rem; margin-bottom: 12px; }
+
+  .file-upload-text {
+    font-size: 0.9rem;
+    color: var(--gray-dim);
+  }
+
+  .file-upload-text span {
+    color: var(--lime);
+    font-weight: 600;
+  }
+
+  .file-list {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(131,246,80,0.08);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--lime);
+  }
+
+  .file-item .remove-file {
+    margin-left: auto;
+    color: var(--gray-dim);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .file-item .remove-file:hover { color: #ff6b6b; }
+
+  .btn-cotizar-submit {
+    width: 100%;
+    margin-top: 12px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--lime), #5bc835);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .btn-cotizar-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(131,246,80,0.35);
+  }
+
+  /* ── TEST / RECOMENDACION ── */
+  #test {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #test::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(131,246,80,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .test-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .test-progress-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+
+  .test-progress-fill {
+    height: 100%;
+    background: var(--lime);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .test-step {
+    display: none;
+    animation: fadeInUp 0.4s ease;
+  }
+
+  .test-step.active { display: block; }
+
+  .test-step-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 16px;
+  }
+
+  .test-question {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: var(--white);
+  }
+
+  .test-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  .test-option {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s;
+    text-align: left;
+  }
+
+  .test-option:hover,
+  .test-option.selected {
+    border-color: var(--lime);
+    background: rgba(131,246,80,0.08);
+  }
+
+  .test-option .opt-icon {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .test-option .opt-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+    color: var(--white);
+  }
+
+  .test-option .opt-sub {
+    font-size: 0.8rem;
+    color: var(--gray-dim);
+    display: block;
+    line-height: 1.4;
+  }
+
+  .test-option.selected .opt-text { color: var(--lime); }
+
+  .test-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .test-nav .btn-secondary {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+  }
+
+  .test-nav .btn-primary {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+  }
+
+  .test-result {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+  }
+
+  .test-result.active { display: block; }
+
+  .result-card {
+    background: rgba(131,246,80,0.08);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .result-icon { font-size: 3rem; margin-bottom: 16px; }
+
+  .result-card h3 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: var(--lime);
+    margin-bottom: 12px;
+  }
+
+  .result-card p {
+    color: var(--gray-soft);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+
+  .result-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .result-tag {
+    background: rgba(131,246,80,0.1);
+    border: 1px solid var(--border);
+    color: var(--lime);
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* ── CONTACTO ── */
+  #contacto {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+  }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .channel-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.2s;
+  }
+
+  .channel-card:hover {
+    border-color: var(--lime);
+    transform: translateX(4px);
+  }
+
+  .channel-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .channel-icon.wsp { background: rgba(37,211,102,0.15); }
+  .channel-icon.ig { background: rgba(225,48,108,0.15); }
+  .channel-icon.mail { background: rgba(118,178,92,0.15); }
+
+  .channel-text .channel-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+  }
+
+  .channel-text .channel-detail {
+    font-size: 0.8rem;
+    color: var(--gray-dim);
+  }
+
+  .channel-arrow {
+    margin-left: auto;
+    color: var(--gray-dim);
+    font-size: 1.1rem;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .channel-card:hover .channel-arrow {
+    color: var(--lime);
+    transform: translateX(4px);
+  }
+
+  .info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 12px;
+  }
+
+  .info-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: var(--lime);
+  }
+
+  .info-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .info-icon {
+    font-size: 1.1rem;
+    margin-top: 2px;
+    min-width: 26px;
+  }
+
+  .info-content .info-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 4px;
+  }
+
+  .info-content .info-val {
+    font-size: 0.9rem;
+    color: var(--gray-soft);
+    line-height: 1.5;
+  }
+
+  .horario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .horario-item {
+    background: rgba(255,255,255,0.03);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .horario-item .dia {
+    color: var(--lime);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .horario-item .hora {
+    color: var(--gray-soft);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black-deep);
+    border-top: 1px solid var(--border);
+    padding: 60px 60px 32px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-brand .logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    color: var(--lime);
+    margin-bottom: 14px;
+  }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    color: var(--gray-dim);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 320px;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: var(--gray-dim);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--lime); }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+  }
+
+  .social-btn:hover {
+    background: rgba(131,246,80,0.15);
+    border-color: var(--lime);
+    transform: translateY(-3px);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-bottom p {
+    font-size: 0.82rem;
+    color: var(--gray-faint);
+  }
+
+  .footer-bottom .nit {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: rgba(136,136,136,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--lime);
+    color: var(--black);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 32px rgba(131,246,80,0.4);
+  }
+
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ── WHATSAPP FLOAT (botón único de mensaje, preservado de index3) ── */
+  .wsp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: all 0.3s;
+    animation: wsp-pulse 3s infinite;
+  }
+
+  .wsp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.6);
+  }
+
+  @keyframes wsp-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+  }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  .mobile-nav.open { transform: translateY(0); }
+
+  .mobile-nav a {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover { color: var(--lime); }
+
+  .mobile-nav-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    section { padding: 70px 28px; }
+    #home { padding: 100px 28px 60px; }
+    .hero-stats { display: none; }
+    .hero-title { font-size: clamp(3rem, 12vw, 5rem); }
+
+    .historia-grid { grid-template-columns: 1fr; gap: 48px; }
+    .portafolio-grid { grid-template-columns: 1fr 1fr; }
+    .port-item.large { grid-column: span 2; }
+    .cotizacion-wrapper { grid-template-columns: 1fr; }
+    .contacto-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 36px; }
+    .form-row { grid-template-columns: 1fr; }
+    .test-options { grid-template-columns: 1fr; }
+    footer { padding: 60px 28px 32px; }
+  }
+
+  @media (max-width: 600px) {
+    .portafolio-grid { grid-template-columns: 1fr; }
+    .port-item.large { grid-column: span 1; grid-row: span 1; }
+    .cotizacion-form { padding: 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-title { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="trebol">☘️</span>
+    <div class="nav-logo-text">
+      <span>El Trébol Inkpacta</span>
+      <span>Publicidad Visual · Medellín</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#test">¿Qué necesito?</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#cotizacion" class="nav-cta">Cotizar ↗</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMenu()">✕</button>
+  <a href="#historia" onclick="toggleMenu()">Historia</a>
+  <a href="#portafolio" onclick="toggleMenu()">Portafolio</a>
+  <a href="#catalogo" onclick="toggleMenu()">Catálogo</a>
+  <a href="#cotizacion" onclick="toggleMenu()">Cotizar</a>
+  <a href="#test" onclick="toggleMenu()">¿Qué necesito?</a>
+  <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">🍀 Medellín · Desde 1971</div>
+    <h1 class="hero-title">
+      Tu marca<br>
+      <span class="accent">visible</span><br>
+      <span class="stroke">al mundo</span>
+    </h1>
+    <p class="hero-desc">
+      Más de 50 años creando publicidad que impacta. Avisos luminosos, corte láser, impresión 3D y mucho más.
+    </p>
+    <div class="hero-actions">
+      <a href="#cotizacion" class="btn-primary">
+        Cotizar ahora
+        <span>→</span>
+      </a>
+      <a href="#test" class="btn-secondary">
+        ¿Qué necesito?
+        <span>✦</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">50+</div>
+      <div class="label">Años de experiencia</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">4.5★</div>
+      <div class="label">Calificación Google</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">∞</div>
+      <div class="label">Proyectos realizados</div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section id="historia">
+  <div class="historia-grid">
+    <div class="historia-text">
+      <div class="section-label">Nuestra historia</div>
+      <h2 class="section-title">Más de<br><span>50 años</span><br>de legado</h2>
+      <p>
+        <strong>Avisos El Trébol Inkpacta S.A.S.</strong> nació en <strong>1971</strong> en Medellín, forjando su reputación durante décadas de trabajo honesto en los sectores de <strong>La Candelaria y San Diego</strong>.
+      </p>
+      <p>
+        Somos una empresa familiar que ha crecido gracias al <strong>voz a voz</strong> de clientes satisfechos. Hoy, combinamos esa trayectoria artesanal con tecnología de punta: corte láser, impresión 3D y soluciones digitales para la publicidad moderna.
+      </p>
+      <p>
+        Desde microempresarios que abren su primer local, hasta arquitectos con proyectos técnicos exigentes, somos el aliado de comunicación visual que tu negocio necesita en Medellín.
+      </p>
+      <div class="badges-row">
+        <div class="badge">☘️ Empresa familiar</div>
+        <div class="badge">🏭 Fabricación propia</div>
+        <div class="badge">⚡ Tecnología avanzada</div>
+        <div class="badge">🎯 Publicidad exterior</div>
+      </div>
+    </div>
+    <div class="historia-milestones">
+      <div class="milestone">
+        <div class="milestone-year">1971</div>
+        <div class="milestone-content">
+          <h4>Fundación</h4>
+          <p>Inicio como taller artesanal de avisos en el corazón de Medellín, La Candelaria.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">1990s</div>
+        <div class="milestone-content">
+          <h4>Expansión</h4>
+          <p>Consolidación en avisos luminosos y publicidad exterior para todo tipo de negocios.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2010s</div>
+        <div class="milestone-content">
+          <h4>Tecnología</h4>
+          <p>Incorporación de corte láser, plotter de corte y modernización con iluminación LED.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2020</div>
+        <div class="milestone-content">
+          <h4>Transformación digital</h4>
+          <p>Digitalización de procesos, impresión 3D y catálogo interactivo vinculado a WhatsApp Business.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2026</div>
+        <div class="milestone-content">
+          <h4>Inkpacta S.A.S.</h4>
+          <p>Formalización como sociedad y lanzamiento de plataforma digital para cotizaciones en línea.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO -->
+<section id="portafolio">
+  <div style="max-width:1200px; margin: 0 auto 40px;">
+    <div class="section-label">Trabajos realizados</div>
+    <h2 class="section-title">Nuestro <span>portafolio</span></h2>
+    <p class="section-sub">Cada proyecto es único. Estos son algunos de los trabajos que nos enorgullecen.</p>
+  </div>
+
+  <div class="portafolio-filter">
+    <button class="filter-btn active" onclick="filterPortafolio('todos', this)">Todos</button>
+    <button class="filter-btn" onclick="filterPortafolio('avisos', this)">Avisos</button>
+    <button class="filter-btn" onclick="filterPortafolio('laser', this)">Corte Láser</button>
+    <button class="filter-btn" onclick="filterPortafolio('exterior', this)">Publicidad Exterior</button>
+    <button class="filter-btn" onclick="filterPortafolio('vehicular', this)">Vehicular</button>
+  </div>
+
+  <div class="portafolio-grid">
+
+    <!-- Fila 1: foto grande sede + aviso circular -->
+    <div class="port-item large" data-cat="avisos">
+      <img src="IMG_20260512_165049.jpg.jpeg" alt="Sede Avisos El Trébol" loading="lazy">
+      <div class="port-tag">Nuestra sede</div>
+      <div class="port-overlay">
+        <h3>SEDE EL TRÉBOL</h3>
+        <p>Cra 45 El Palo #38-04, La Candelaria, Medellín — 50 años en este mismo lugar</p>
+      </div>
+    </div>
+
+    <div class="port-item" data-cat="avisos">
+      <img src="IMG_20260512_165218.jpg.jpeg" alt="Aviso circular luminoso tres tercios" loading="lazy">
+      <div class="port-tag">Aviso luminoso</div>
+      <div class="port-overlay">
+        <h3>AVISO CIRCULAR</h3>
+        <p>Caja de luz circular en acrílico blanco con vinilo negro — acabado premium</p>
+      </div>
+    </div>
+
+    <!-- Fila 2: FILO luminoso + vehicular unidad canina -->
+    <div class="port-item" data-cat="avisos">
+      <img src="IMG_20260512_165230.jpg.jpeg" alt="Aviso FILO Big Food luminoso" loading="lazy">
+      <div class="port-tag">LED retroiluminado</div>
+      <div class="port-overlay">
+        <h3>AVISO CON LUZ TRASERA</h3>
+        <p>Aviso redondo en madera con luz trasera cálida — branding para bar/restaurante</p>
+      </div>
+    </div>
+
+    <div class="port-item" data-cat="vehicular">
+      <img src="IMG_20260512_165110.jpg.jpeg" alt="Branding vehicular Unidad Canina Segurcol" loading="lazy">
+      <div class="port-tag">Vehicular</div>
+      <div class="port-overlay">
+        <h3>BRANDING VEHICULAR</h3>
+        <p>Rotulado completo con vinilos de corte — empresa de seguridad privada</p>
+      </div>
+    </div>
+
+    <!-- Fila 3: señalética totem grande + máquina láser -->
+    <div class="port-item large" data-cat="senaletica">
+      <img src="IMG_20260512_165134.jpg.jpeg" alt="Tótems luminosos señalética" loading="lazy">
+      <div class="port-tag">Señalética</div>
+      <div class="port-overlay">
+        <h3>TÓTEMS LUMINOSOS</h3>
+        <p>Señalética de doble cara con cajas de luz — fabricación e instalación completa</p>
+      </div>
+    </div>
+
+    <div class="port-item" data-cat="laser">
+      <img src="IMG_20260512_165121.jpg.jpeg" alt="Máquina láser de precisión" loading="lazy">
+      <div class="port-tag">Tecnología</div>
+      <div class="port-overlay">
+        <h3>CORTE LÁSER</h3>
+        <p>Nuestro equipo de corte láser de última generación en operación</p>
+      </div>
+    </div>
+
+    <!-- Fila 4: vinilos / stickers + furgón + pantalla LED -->
+    <div class="port-item" data-cat="laser">
+      <img src="IMG_20260512_165148.jpg.jpeg" alt="Stickers y vinilos de corte" loading="lazy">
+      <div class="port-tag">Vinilos</div>
+      <div class="port-overlay">
+        <h3>STICKERS Y VINILOS</h3>
+        <p>Corte de vinilos y calcomanías adhesivas para múltiples aplicaciones</p>
+      </div>
+    </div>
+
+    <div class="port-item" data-cat="vehicular">
+      <img src="IMG_20260512_165110.jpg.jpeg" alt="Furgón publicitario Corte Grueso" loading="lazy">
+      <div class="port-tag">Furgón</div>
+      <div class="port-overlay">
+        <h3>FURGÓN PUBLICITARIO</h3>
+        <p>Rotulado de furgón en gran formato para parrilla-bar — impresión directa</p>
+      </div>
+    </div>
+
+    <div class="port-item" data-cat="avisos">
+      <img src="IMG_20260512_165204.jpg.jpeg" alt="Pantalla LED programable" loading="lazy">
+      <div class="port-tag">LED</div>
+      <div class="port-overlay">
+        <h3>PANTALLA LED</h3>
+        <p>Pantallas LED programables con texto y animaciones multicolor</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATALOGO -->
+<section id="catalogo">
+  <div style="max-width:1200px; margin: 0 auto;">
+    <div class="section-label">Productos y servicios</div>
+    <h2 class="section-title">Catálogo</h2>
+    <p class="section-sub">Explora nuestra oferta completa. Haz clic en cualquier producto para cotizarlo directamente.</p>
+
+    <div class="catalogo-tabs">
+      <button class="tab-btn active" onclick="openTab('impresion', this)">Impresión & Corte</button>
+      <button class="tab-btn" onclick="openTab('exterior', this)">Publicidad Exterior</button>
+      <button class="tab-btn" onclick="openTab('vehicular', this)">Vehicular</button>
+      <button class="tab-btn" onclick="openTab('especiales', this)">Especiales</button>
+    </div>
+
+    <div id="tab-impresion" class="tab-content active">
+      <div class="productos-grid">
+        <div class="producto-card">
+          <div class="producto-icon">✂️</div>
+          <div class="producto-info">
+            <h3>Corte Láser</h3>
+            <p>Corte de precisión en acrílico, MDF, cuero, tela y más. Ideal para decoración, señalética y piezas personalizadas.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Corte Láser')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🖨️</div>
+          <div class="producto-info">
+            <h3>Impresión 3D</h3>
+            <p>Modelos tridimensionales para arquitectura, marketing, prototipos y decoración. Alta resolución.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Impresión 3D')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🔷</div>
+          <div class="producto-info">
+            <h3>Acrílicos</h3>
+            <p>Fabricación y corte de piezas en acrílico de diferentes colores y espesores. Letras, marcos, displays.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Acrílicos')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🗺️</div>
+          <div class="producto-info">
+            <h3>Impresión Gran Formato</h3>
+            <p>Impresión digital en vinil, lona, papel fotográfico y más. Para interiores y exteriores.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Impresión Gran Formato')">Cotizar este producto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-exterior" class="tab-content">
+      <div class="productos-grid">
+        <div class="producto-card">
+          <div class="producto-icon">💡</div>
+          <div class="producto-info">
+            <h3>Avisos Luminosos</h3>
+            <p>Diseño y fabricación de avisos con iluminación LED. Letras volumétricas, cajas de luz y más.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Avisos Luminosos')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🪧</div>
+          <div class="producto-info">
+            <h3>Vallas Publicitarias</h3>
+            <p>Fabricación e instalación de vallas en diferentes tamaños para exterior.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Vallas Publicitarias')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🎪</div>
+          <div class="producto-info">
+            <h3>Pendones</h3>
+            <p>Pendones y banners para eventos, tiendas y espacios comerciales. Varios acabados disponibles.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Pendones')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">⚠️</div>
+          <div class="producto-info">
+            <h3>Señalética Industrial</h3>
+            <p>Sistemas completos de señalización para plantas industriales, bodegas y empresas.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Señalética Industrial')">Cotizar este producto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-vehicular" class="tab-content">
+      <div class="productos-grid">
+        <div class="producto-card">
+          <div class="producto-icon">🚕</div>
+          <div class="producto-info">
+            <h3>Placas de Taxi</h3>
+            <p>Fabricación de placas y emblemas especializados para taxistas. Servicio con décadas de tradición.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Placas de Taxi')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🚗</div>
+          <div class="producto-info">
+            <h3>Branding Vehicular</h3>
+            <p>Vinilos, calcomanías y rotulado vehicular para flotas y vehículos personales.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Branding Vehicular')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">📛</div>
+          <div class="producto-info">
+            <h3>Emblemas y Logos</h3>
+            <p>Elaboración de emblemas en diferentes materiales: acrílico, metal, PVC y aluminio.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Emblemas y Logos')">Cotizar este producto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-especiales" class="tab-content">
+      <div class="productos-grid">
+        <div class="producto-card">
+          <div class="producto-icon">🏗️</div>
+          <div class="producto-info">
+            <h3>Proyectos Arquitectónicos</h3>
+            <p>Piezas técnicas para estudios de arquitectura: modelos, señalética premium y elementos decorativos.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Proyectos Arquitectónicos')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🏆</div>
+          <div class="producto-info">
+            <h3>Reconocimientos</h3>
+            <p>Placas conmemorativas, trofeos y reconocimientos empresariales en materiales premium.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Reconocimientos')">Cotizar este producto</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-icon">🎨</div>
+          <div class="producto-info">
+            <h3>Decoración Comercial</h3>
+            <p>Interiorismo con vinilos decorativos, murales, letreros para tiendas y oficinas.</p>
+            <div class="producto-desde">Desde consultar precio</div>
+            <button class="btn-cotizar-card" onclick="scrollToCotizar('Decoración Comercial')">Cotizar este producto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COTIZACION -->
+<section id="cotizacion">
+  <div style="max-width:1200px; margin: 0 auto 50px;">
+    <div class="section-label">Cotiza en minutos</div>
+    <h2 class="section-title">Solicitar <span>cotización</span></h2>
+  </div>
+
+  <div class="cotizacion-wrapper">
+    <div class="cotizacion-info">
+      <h3>¿Cómo funciona?</h3>
+      <p>Cuéntanos tu proyecto y te contactamos en menos de 24 horas con una propuesta personalizada. Sin compromisos.</p>
+      <p>Entre más detalle nos des sobre el tamaño, material y uso del producto, más precisa será la cotización.</p>
+      <ul class="cotizacion-features">
+        <li>Respuesta en menos de 24 horas hábiles</li>
+        <li>Cotización sin costo ni compromiso</li>
+        <li>Puedes adjuntar archivos de diseño (AI, PDF, imagen)</li>
+        <li>Asesoría personalizada incluida</li>
+        <li>Producción con materiales certificados</li>
+        <li>Entrega en Medellín y área metropolitana</li>
+      </ul>
+    </div>
+
+    <div class="cotizacion-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" id="nombre" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label>Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" placeholder="300 000 0000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" id="correo" placeholder="tu@correo.com">
+      </div>
+
+      <div class="form-group">
+        <label>Tipo de producto</label>
+        <select id="producto-select" onchange="calcularPrecio()">
+          <option value="">— Selecciona un producto —</option>
+          <option value="aviso-luminoso">Aviso luminoso</option>
+          <option value="corte-laser">Corte láser</option>
+          <option value="impresion-3d">Impresión 3D</option>
+          <option value="pendones">Pendones / Banners</option>
+          <option value="vallas">Vallas publicitarias</option>
+          <option value="placas-taxi">Placas de taxi</option>
+          <option value="branding-vehicular">Branding vehicular</option>
+          <option value="senaletica">Señalética industrial</option>
+          <option value="acrilico">Acrílicos</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Medidas (cm)</label>
+        <div class="medidas-row">
+          <input type="number" id="ancho" placeholder="Ancho" min="1" onchange="calcularPrecio()">
+          <span class="medidas-sep">×</span>
+          <input type="number" id="alto" placeholder="Alto" min="1" onchange="calcularPrecio()">
+          <span class="medidas-sep" style="font-size:0.85rem; color: var(--gray-dim)">cm</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Material preferido</label>
+        <div class="material-grid" id="material-grid">
+          <div class="material-option" onclick="selectMaterial(this, 'Acrílico')">Acrílico</div>
+          <div class="material-option" onclick="selectMaterial(this, 'PVC')">PVC</div>
+          <div class="material-option" onclick="selectMaterial(this, 'Aluminio')">Aluminio</div>
+          <div class="material-option" onclick="selectMaterial(this, 'Madera/MDF')">Madera/MDF</div>
+          <div class="material-option" onclick="selectMaterial(this, 'Vinil')">Vinil</div>
+          <div class="material-option" onclick="selectMaterial(this, 'No sé / Asesoría')">No sé / Asesoría</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Cantidad</label>
+        <input type="number" id="cantidad" placeholder="Ej: 1" min="1" value="1" onchange="calcularPrecio()">
+      </div>
+
+      <div class="form-group">
+        <label>Cuéntanos más sobre tu proyecto</label>
+        <textarea id="descripcion" placeholder="Describe tu proyecto, colores, referencias, uso, etc."></textarea>
+      </div>
+
+      <!-- FILE UPLOAD -->
+      <div class="form-group">
+        <label>Adjuntar archivos de diseño (opcional)</label>
+        <div class="file-upload-area" id="uploadArea">
+          <input type="file" id="fileInput" multiple accept=".pdf,.ai,.png,.jpg,.jpeg,.svg,.eps,.zip" onchange="handleFiles(this.files)">
+          <div class="file-upload-icon">📁</div>
+          <div class="file-upload-text">
+            Arrastra archivos aquí o <span>haz clic para seleccionar</span><br>
+            <small style="color:var(--gray-faint); font-size:0.7rem; margin-top:4px; display:block;">PDF, AI, PNG, JPG, SVG, EPS, ZIP — Máx. 20MB</small>
+          </div>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </div>
+
+      <!-- PRECIO ESTIMADO -->
+      <div class="precio-estimado" id="precioEstimado">
+        <div class="precio-label">Precio estimado</div>
+        <div class="precio-valor" id="precioValor">—</div>
+        <div class="precio-nota">* Este es un estimado referencial. La cotización final se confirmará por WhatsApp o correo.</div>
+      </div>
+
+      <button class="btn-cotizar-submit" onclick="enviarCotizacion()">
+        💬 Enviar Cotización por WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- TEST -->
+<section id="test">
+  <div style="max-width:700px; margin: 0 auto 50px;">
+    <div class="section-label">Orientación personalizada</div>
+    <h2 class="section-title">¿Qué <span>necesitas?</span></h2>
+    <p class="section-sub">Responde 4 preguntas rápidas y te recomendamos el producto ideal para tu negocio.</p>
+  </div>
+
+  <div class="test-wrapper">
+    <div class="test-progress-bar">
+      <div class="test-progress-fill" id="testProgress"></div>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="test-step active" id="step-1">
+      <div class="test-step-num">Pregunta 1 de 4</div>
+      <h3 class="test-question">¿Qué tipo de negocio o perfil describes mejor?</h3>
+      <div class="test-options">
+        <div class="test-option" onclick="selectOption(this, 1, 'microempresario')">
+          <div class="opt-icon">🏪</div>
+          <span class="opt-text">Microempresario</span>
+          <span class="opt-sub">Tengo o voy a abrir un local comercial</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 1, 'taxista')">
+          <div class="opt-icon">🚕</div>
+          <span class="opt-text">Taxista / Transportador</span>
+          <span class="opt-sub">Necesito personalización vehicular</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 1, 'arquitecto')">
+          <div class="opt-icon">🏗️</div>
+          <span class="opt-text">Arquitecto / Diseñador</span>
+          <span class="opt-sub">Proyectos técnicos y creativos avanzados</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 1, 'empresa')">
+          <div class="opt-icon">🏢</div>
+          <span class="opt-text">Empresa / Institución</span>
+          <span class="opt-sub">Necesito señalética o branding corporativo</span>
+        </div>
+      </div>
+      <div class="test-nav">
+        <div></div>
+        <button class="btn-primary" onclick="nextStep(1)" id="next-1" style="display:none">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="test-step" id="step-2">
+      <div class="test-step-num">Pregunta 2 de 4</div>
+      <h3 class="test-question">¿Cuál es el uso principal del producto?</h3>
+      <div class="test-options">
+        <div class="test-option" onclick="selectOption(this, 2, 'exterior')">
+          <div class="opt-icon">🌤️</div>
+          <span class="opt-text">Exterior</span>
+          <span class="opt-sub">Fachada, valla o publicidad en calle</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 2, 'interior')">
+          <div class="opt-icon">🏠</div>
+          <span class="opt-text">Interior</span>
+          <span class="opt-sub">Dentro del local, oficina o vehículo</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 2, 'evento')">
+          <div class="opt-icon">🎉</div>
+          <span class="opt-text">Evento / Temporal</span>
+          <span class="opt-sub">Feria, lanzamiento, campaña</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 2, 'decoracion')">
+          <div class="opt-icon">🎨</div>
+          <span class="opt-text">Decoración / Arte</span>
+          <span class="opt-sub">Pieza decorativa o artística</span>
+        </div>
+      </div>
+      <div class="test-nav">
+        <button class="btn-secondary" onclick="prevStep(2)">← Anterior</button>
+        <button class="btn-primary" onclick="nextStep(2)" id="next-2" style="display:none">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="test-step" id="step-3">
+      <div class="test-step-num">Pregunta 3 de 4</div>
+      <h3 class="test-question">¿Qué material te parece más adecuado?</h3>
+      <div class="test-options">
+        <div class="test-option" onclick="selectOption(this, 3, 'acrilico')">
+          <div class="opt-icon">🔷</div>
+          <span class="opt-text">Acrílico / Plástico</span>
+          <span class="opt-sub">Moderno, colorido y versátil</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 3, 'metal')">
+          <div class="opt-icon">🔩</div>
+          <span class="opt-text">Metal / Aluminio</span>
+          <span class="opt-sub">Resistente y profesional</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 3, 'tela')">
+          <div class="opt-icon">🧵</div>
+          <span class="opt-text">Lona / Tela</span>
+          <span class="opt-sub">Económico y flexible</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 3, 'noconozco')">
+          <div class="opt-icon">🤔</div>
+          <span class="opt-text">No lo sé aún</span>
+          <span class="opt-sub">Quiero asesoría del equipo</span>
+        </div>
+      </div>
+      <div class="test-nav">
+        <button class="btn-secondary" onclick="prevStep(3)">← Anterior</button>
+        <button class="btn-primary" onclick="nextStep(3)" id="next-3" style="display:none">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="test-step" id="step-4">
+      <div class="test-step-num">Pregunta 4 de 4</div>
+      <h3 class="test-question">¿Cuál es tu presupuesto aproximado?</h3>
+      <div class="test-options">
+        <div class="test-option" onclick="selectOption(this, 4, 'bajo')">
+          <div class="opt-icon">💰</div>
+          <span class="opt-text">Hasta $200.000</span>
+          <span class="opt-sub">Proyecto pequeño o básico</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 4, 'medio')">
+          <div class="opt-icon">💵</div>
+          <span class="opt-text">$200.000 – $800.000</span>
+          <span class="opt-sub">Proyecto mediano estándar</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 4, 'alto')">
+          <div class="opt-icon">💎</div>
+          <span class="opt-text">$800.000 – $2.000.000</span>
+          <span class="opt-sub">Proyecto completo con acabados</span>
+        </div>
+        <div class="test-option" onclick="selectOption(this, 4, 'premium')">
+          <div class="opt-icon">🏅</div>
+          <span class="opt-text">Más de $2.000.000</span>
+          <span class="opt-sub">Proyecto grande o corporativo</span>
+        </div>
+      </div>
+      <div class="test-nav">
+        <button class="btn-secondary" onclick="prevStep(4)">← Anterior</button>
+        <button class="btn-primary" onclick="mostrarResultado()" id="ver-resultado" style="display:none">Ver mi recomendación ✨</button>
+      </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div class="test-result" id="test-result">
+      <div class="result-card">
+        <div class="result-icon" id="result-icon">✨</div>
+        <h3 id="result-title">TU RECOMENDACIÓN</h3>
+        <p id="result-desc">Descripción personalizada.</p>
+        <div class="result-productos" id="result-productos"></div>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="btn-primary" onclick="scrollToCotizar('')">Cotizar ahora →</button>
+          <button class="btn-secondary" onclick="reiniciarTest()">Volver a empezar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div style="max-width:1200px; margin: 0 auto 50px;">
+    <div class="section-label">Estamos aquí</div>
+    <h2 class="section-title">Contáctanos</h2>
+    <p class="section-sub">Escríbenos por el canal que prefieras. Respondemos de lunes a sábado.</p>
+  </div>
+
+  <div class="contacto-grid">
+    <div>
+      <div class="contact-channels">
+        <a href="https://api.whatsapp.com/message/W4UQUBUP47TZH1?autoload=1&app_absent=0" target="_blank" class="channel-card">
+          <div class="channel-icon wsp">💬</div>
+          <div class="channel-text">
+            <div class="channel-title">WhatsApp Business</div>
+            <div class="channel-detail">300 601 9248 — Respuesta rápida</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+        <a href="https://www.instagram.com/avisoseltrebolinkpacta?igsh=eHhyMmIzaDQyZDhq" target="_blank" class="channel-card">
+          <div class="channel-icon ig">📸</div>
+          <div class="channel-text">
+            <div class="channel-title">Instagram</div>
+            <div class="channel-detail">@avisoseltrebolinkpacta — Mira nuestros proyectos</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+        <a href="mailto:avisoseltrebol@gmail.com" class="channel-card">
+          <div class="channel-icon mail">✉️</div>
+          <div class="channel-text">
+            <div class="channel-title">Correo electrónico</div>
+            <div class="channel-detail">avisoseltrebol@gmail.com</div>
+          </div>
+          <div class="channel-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>INFORMACIÓN</h3>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div class="info-content">
+          <div class="info-label">Dirección</div>
+          <div class="info-val">Carrera 45 #38-04<br>Medellín, Antioquia, Colombia</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div class="info-content">
+          <div class="info-label">Teléfono</div>
+          <div class="info-val">300 601 9248</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🌐</div>
+        <div class="info-content">
+          <div class="info-label">Sitio web</div>
+          <div class="info-val">avisoseltrebol.com</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🕐</div>
+        <div class="info-content">
+          <div class="info-label">Horarios de atención</div>
+          <div class="horario-grid">
+            <div class="horario-item">
+              <div class="dia">Lun – Vie</div>
+              <div class="hora">8:00 am – 6:00 pm</div>
+            </div>
+            <div class="horario-item">
+              <div class="dia">Sábado</div>
+              <div class="hora">8:00 am – 3:00 pm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">☘️ El Trébol Inkpacta</div>
+      <p>Más de 50 años fabricando soluciones de publicidad visual en Medellín. Tradición, tecnología y calidad al servicio de tu marca.</p>
+      <div class="footer-social">
+        <a href="https://api.whatsapp.com/message/W4UQUBUP47TZH1?autoload=1&app_absent=0" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+        <a href="https://www.instagram.com/avisoseltrebolinkpacta?igsh=eHhyMmIzaDQyZDhq" target="_blank" class="social-btn" title="Instagram">📸</a>
+        <a href="mailto:avisoseltrebol@gmail.com" class="social-btn" title="Email">✉️</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#catalogo">Avisos luminosos</a></li>
+        <li><a href="#catalogo">Corte láser</a></li>
+        <li><a href="#catalogo">Impresión 3D</a></li>
+        <li><a href="#catalogo">Pendones y vallas</a></li>
+        <li><a href="#catalogo">Señalética industrial</a></li>
+        <li><a href="#catalogo">Branding vehicular</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#historia">Nuestra historia</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#test">¿Qué necesito?</a></li>
+        <li><a href="#cotizacion">Cotizar</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Avisos El Trébol Inkpacta S.A.S. — Todos los derechos reservados.</p>
+    <p class="nit">NIT: 901707483 | Medellín, Colombia</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT (botón único de mensaje preservado de index3) -->
+<a href="https://api.whatsapp.com/message/W4UQUBUP47TZH1?autoload=1&app_absent=0" target="_blank" class="wsp-float" title="Escríbenos por WhatsApp">💬</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // ========= NAV =========
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
+  });
+
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  // ========= PORTAFOLIO FILTER =========
+  function filterPortafolio(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.port-item').forEach(item => {
+      if (cat === 'todos' || item.dataset.cat === cat) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // ========= TABS =========
+  function openTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // ========= MATERIAL SELECTOR =========
+  let selectedMaterial = '';
+  function selectMaterial(el, mat) {
+    document.querySelectorAll('.material-option').forEach(m => m.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedMaterial = mat;
+    calcularPrecio();
+  }
+
+  // ========= PRECIO ESTIMADO =========
+  function calcularPrecio() {
+    const producto = document.getElementById('producto-select').value;
+    const ancho = parseFloat(document.getElementById('ancho').value) || 0;
+    const alto = parseFloat(document.getElementById('alto').value) || 0;
+    const cantidad = parseInt(document.getElementById('cantidad').value) || 1;
+
+    if (!producto || !ancho || !alto) {
+      document.getElementById('precioEstimado').classList.remove('visible');
+      return;
+    }
+
+    const area = (ancho * alto) / 10000; // m²
+    const basePrecios = {
+      'aviso-luminoso': 280000,
+      'corte-laser': 90000,
+      'impresion-3d': 120000,
+      'pendones': 35000,
+      'vallas': 150000,
+      'placas-taxi': 25000,
+      'branding-vehicular': 180000,
+      'senaletica': 85000,
+      'acrilico': 70000,
+      'otro': 100000
+    };
+
+    const base = basePrecios[producto] || 100000;
+    const precioArea = Math.max(base, base * Math.sqrt(area + 0.1) * 1.5);
+    const total = Math.round(precioArea * cantidad / 1000) * 1000;
+
+    const formato = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+    document.getElementById('precioValor').textContent = formato.format(total);
+    document.getElementById('precioEstimado').classList.add('visible');
+  }
+
+  // ========= FILE UPLOAD =========
+  let attachedFiles = [];
+
+  function handleFiles(files) {
+    for (const f of files) {
+      if (!attachedFiles.find(x => x.name === f.name)) {
+        attachedFiles.push(f);
+      }
+    }
+    renderFileList();
+  }
+
+  const uploadArea = document.getElementById('uploadArea');
+  uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.style.borderColor = 'var(--lime)'; });
+  uploadArea.addEventListener('dragleave', () => { uploadArea.style.borderColor = ''; });
+  uploadArea.addEventListener('drop', e => {
+    e.preventDefault();
+    uploadArea.style.borderColor = '';
+    handleFiles(e.dataTransfer.files);
+  });
+
+  function renderFileList() {
+    const list = document.getElementById('fileList');
+    list.innerHTML = attachedFiles.map((f, i) => `
+      <div class="file-item">
+        <span>📄</span>
+        <span>${f.name}</span>
+        <span style="color:var(--gray-dim); font-size:0.72rem;">${(f.size/1024).toFixed(0)} KB</span>
+        <button class="remove-file" onclick="removeFile(${i})">✕</button>
+      </div>
+    `).join('');
+  }
+
+  function removeFile(i) {
+    attachedFiles.splice(i, 1);
+    renderFileList();
+  }
+
+  // ========= SCROLL TO COTIZAR =========
+  function scrollToCotizar(producto) {
+    document.getElementById('cotizacion').scrollIntoView({ behavior: 'smooth' });
+    if (producto) {
+      setTimeout(() => {
+        const select = document.getElementById('producto-select');
+        const map = {
+          'Corte Láser': 'corte-laser',
+          'Impresión 3D': 'impresion-3d',
+          'Acrílicos': 'acrilico',
+          'Impresión Gran Formato': 'pendones',
+          'Avisos Luminosos': 'aviso-luminoso',
+          'Vallas Publicitarias': 'vallas',
+          'Pendones': 'pendones',
+          'Señalética Industrial': 'senaletica',
+          'Placas de Taxi': 'placas-taxi',
+          'Branding Vehicular': 'branding-vehicular',
+        };
+        if (map[producto]) select.value = map[producto];
+      }, 600);
+    }
+  }
+
+  // ========= ENVIAR COTIZACION =========
+  function enviarCotizacion() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+    const producto = document.getElementById('producto-select').value;
+    const productoNombre = document.getElementById('producto-select').options[document.getElementById('producto-select').selectedIndex].text;
+    const ancho = document.getElementById('ancho').value;
+    const alto = document.getElementById('alto').value;
+    const cantidad = document.getElementById('cantidad').value || '1';
+    const descripcion = document.getElementById('descripcion').value.trim();
+    const precioValor = document.getElementById('precioValor').textContent;
+    const puedeCalcularse = (ancho && alto && producto);
+
+    // Validación
+    if (!nombre || !telefono) {
+      showToast('⚠️ Por favor completa: Nombre y Teléfono');
+      return;
+    }
+
+    // Construir mensaje profesional
+    let msg = `🍀 *COTIZACIÓN - AVISOS EL TRÉBOL INKPACTA*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    
+    msg += `👤 *DATOS DEL CLIENTE*\n`;
+    msg += `Nombre: ${nombre}\n`;
+    msg += `Teléfono: ${telefono}\n`;
+    if (correo) msg += `Correo: ${correo}\n`;
+    msg += `\n`;
+
+    msg += `📋 *DETALLES DEL PROYECTO*\n`;
+    if (producto && productoNombre !== '— Selecciona un producto —') {
+      msg += `Producto: ${productoNombre}\n`;
+    }
+    if (ancho && alto) {
+      msg += `Medidas: ${ancho} cm × ${alto} cm\n`;
+    }
+    if (cantidad && cantidad !== '1') {
+      msg += `Cantidad: ${cantidad}\n`;
+    }
+    if (selectedMaterial) {
+      msg += `Material preferido: ${selectedMaterial}\n`;
+    }
+    msg += `\n`;
+
+    if (descripcion) {
+      msg += `📝 *DESCRIPCIÓN DEL PROYECTO*\n`;
+      msg += `${descripcion}\n\n`;
+    }
+
+    // Incluir precio estimado si está disponible
+    if (precioValor !== '—') {
+      msg += `💰 *PRECIO ESTIMADO*\n`;
+      msg += `${precioValor}\n`;
+      msg += `_(Este es un estimado referencial)_\n\n`;
+    }
+
+    if (attachedFiles.length > 0) {
+      msg += `📎 *ARCHIVOS ADJUNTOS*\n`;
+      msg += `Tengo ${attachedFiles.length} archivo(s) de diseño para enviar\n\n`;
+    }
+
+    msg += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `✨ *Gracias por contactarnos. Responderemos en menos de 24 horas.*`;
+
+    // Enviar a WhatsApp
+    const url = `https://api.whatsapp.com/message/W4UQUBUP47TZH1?autoload=1&app_absent=0&text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    showToast('✅ ¡Abriendo WhatsApp con tu cotización! 🚀');
+  }
+
+  // ========= TOAST =========
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // ========= TEST =========
+  const testAnswers = {};
+  let currentStep = 1;
+
+  function selectOption(el, step, value) {
+    el.closest('.test-step').querySelectorAll('.test-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    testAnswers[step] = value;
+    const nextBtn = document.getElementById(step === 4 ? 'ver-resultado' : 'next-' + step);
+    if (nextBtn) nextBtn.style.display = 'inline-flex';
+  }
+
+  function nextStep(current) {
+    document.getElementById('step-' + current).classList.remove('active');
+    document.getElementById('step-' + (current + 1)).classList.add('active');
+    currentStep = current + 1;
+    updateProgress();
+  }
+
+  function prevStep(current) {
+    document.getElementById('step-' + current).classList.remove('active');
+    document.getElementById('step-' + (current - 1)).classList.add('active');
+    currentStep = current - 1;
+    updateProgress();
+  }
+
+  function updateProgress() {
+    document.getElementById('testProgress').style.width = ((currentStep - 1) / 4 * 100) + '%';
+  }
+
+  function mostrarResultado() {
+    document.getElementById('step-4').classList.remove('active');
+    document.getElementById('test-result').classList.add('active');
+    document.getElementById('testProgress').style.width = '100%';
+
+    const perfil = testAnswers[1];
+    const uso = testAnswers[2];
+
+    const resultados = {
+      taxista: {
+        icon: '🚕', title: 'PERSONALIZACIÓN VEHICULAR',
+        desc: 'Para taxistas y transportadores, somos el referente en Medellín. Te recomendamos nuestro servicio de placas, emblemas y branding vehicular. Con más de 50 años atendiendo a este gremio, garantizamos calidad y durabilidad.',
+        productos: ['Placas de Taxi', 'Emblemas', 'Branding Vehicular', 'Vinilos']
+      },
+      arquitecto: {
+        icon: '🏗️', title: 'PROYECTOS TÉCNICOS',
+        desc: 'Para arquitectos y diseñadores, ofrecemos corte láser de precisión, impresión 3D y acrílicos de alta calidad. Ideal para maquetas, señalética premium y elementos decorativos de tus proyectos.',
+        productos: ['Corte Láser', 'Impresión 3D', 'Acrílicos', 'Señalética Premium']
+      },
+      microempresario: {
+        icon: '🏪', title: 'AVISO PARA TU LOCAL',
+        desc: 'Para tu negocio lo más importante es visibilidad. Te recomendamos comenzar con un aviso luminoso llamativo para tu fachada, complementado con señalética interior y vinilos corporativos.',
+        productos: ['Aviso Luminoso', 'Señalética Interior', 'Vinilos', 'Pendones']
+      },
+      empresa: {
+        icon: '🏢', title: 'BRANDING CORPORATIVO',
+        desc: 'Para empresas e instituciones, diseñamos sistemas integrales de señalética y comunicación visual. Desde la fachada hasta la señalización interna, todo cohesionado con tu identidad corporativa.',
+        productos: ['Señalética Industrial', 'Fachada', 'Branding Corporativo', 'Vallas']
+      }
+    };
+
+    const r = resultados[perfil] || resultados['microempresario'];
+    document.getElementById('result-icon').textContent = r.icon;
+    document.getElementById('result-title').textContent = r.title;
+    document.getElementById('result-desc').textContent = r.desc;
+    document.getElementById('result-productos').innerHTML = r.productos.map(p => `<div class="result-tag">${p}</div>`).join('');
+  }
+
+  function reiniciarTest() {
+    testAnswers[1] = testAnswers[2] = testAnswers[3] = testAnswers[4] = undefined;
+    document.getElementById('test-result').classList.remove('active');
+    document.querySelectorAll('.test-step').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.test-option').forEach(o => o.classList.remove('selected'));
+    ['next-1','next-2','next-3','ver-resultado'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+    document.getElementById('step-1').classList.add('active');
+    currentStep = 1;
+    updateProgress();
+  }
+</script>
+</body>
+</html>
